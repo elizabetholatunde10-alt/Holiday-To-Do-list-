@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Holiday To-Do list 🌸</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+
+</head>
+<body>
+  <div class="app">
+    <!-- The Dark Mode Toggle Button sits perfectly right here -->
+    <button id="themeToggle" class="theme-btn" onclick="toggleTheme()">🌙</button>
+
+    <!-- Branded App Icon Badge -->
+    <div class="app-logo">🌸</div>
+
+    <h1>Holiday To-Do</h1>
+    <p class="subtitle">Climb higher. No excuses.</p>
+
+    <!-- Level & Progress Tracking Layout -->
+    <div class="level-box">
+      <div class="level-info">
+        <span id="levelText">Level 1</span>
+        <span id="xpText">0 / 100 XP</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+      </div>
+      <div class="ladder" id="ladder">█ █ █ ░ ░ ░ ░</div>
+      <p class="motivation" id="motivation">Climb or fall behind.</p>
+    </div>
+
+    <!-- Live Performance Stats boards -->
+    <div class="stats">
+      <div class="stat">
+        <div class="stat-num" id="points">0</div>
+        <div class="stat-label">Points</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" id="completed">0</div>
+        <div class="stat-label">Completed</div>
+      </div>
+    </div>
+
+    <!-- User Input Actions Section -->
+    <div class="add-task">
+      <input type="text" id="taskInput" placeholder="Add a holiday task...">
+      <button onclick="addTask()">Add</button>
+    </div>
+
+    <!-- Active Task Feed Container -->
+    <ul id="taskList"></ul>
+
+    <!-- Gamified Multi-Player Competitive Leaderboard -->
+    <div class="leaderboard-box" style="margin-top: 25px; background: #fff; border-radius: 12px; padding: 15px; border: 1px solid #e2e8f0; text-align: left;">
+      <h3 style="margin-top:0; color: #1e293b; font-size: 1.1rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 5px;">🏆 Holiday Leaderboard</h3>
+      <div id="leaderboardList"></div>
+    </div>
+
+    <!-- Timed Audit Activity Logging History Ledger Feed -->
+    <div class="activity-log-box" style="margin-top: 20px; background: #fff; border-radius: 12px; padding: 15px; border: 1px solid #e2e8f0; text-align: left;">
+      <h3 style="margin-top:0; color: #1e293b; font-size: 1.1rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 5px;">⏱️ Live Activity Ledger</h3>
+      <div id="activityLogList" style="max-height: 150px; overflow-y: auto; font-family: monospace; font-size: 0.8rem;"></div>
+    </div>
+
+  </div> <!-- Closes the main application container card wrapper element -->
+
+  <!-- Links your core script controller file -->
+  <script src="script.js"></script>
+
+</body>
+</html>
+
