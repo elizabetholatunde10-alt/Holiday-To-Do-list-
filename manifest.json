@@ -1,0 +1,22 @@
+{
+  "short_name": "HolidayTodo",
+  "name": "Holiday To-Do App Tracker",
+  "icons": [
+    {
+      "src": "https://icons8.com",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "https://icons8.com",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "background_color": "#ffffff",
+  "theme_color": "#31b0d5",
+  "display": "standalone",
+  "orientation": "portrait"
+}
+
