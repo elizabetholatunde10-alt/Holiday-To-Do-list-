@@ -1,0 +1,246 @@
+/* ==========================================
+   1. GLOBAL RESETS & BASE STYLE
+   ========================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Main Dashboard Card Wrapper */
+.app {
+  background: #ffffff;
+  width: 100%;
+  max-width: 450px;
+  border-radius: 24px;
+  padding: 28px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.8rem;
+  color: #0f172a;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin-bottom: 24px;
+}
+
+/* ==========================================
+   2. GAME CORE (LEVELS & PROGRESS BAR)
+   ========================================== */
+.level-box {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.level-info {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  color: #334155;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.progress-bar {
+  background: #e2e8f0;
+  height: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+
+.progress-fill {
+  background: #0ea5e9;
+  width: 0%; /* Adjusted via JS */
+  height: 100%;
+  transition: width 0.3s ease-in-out;
+}
+
+.ladder {
+  font-family: monospace;
+  letter-spacing: 2px;
+  color: #0ea5e9;
+  margin-bottom: 6px;
+}
+
+.motivation {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-style: italic;
+}
+
+/* ==========================================
+   3. STATS PANELS UI
+   ========================================== */
+.stats {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat {
+  flex: 1;
+  background: #f0f9ff;
+  border: 1px solid #e0f2fe;
+  border-radius: 14px;
+  padding: 12px;
+}
+
+.stat-num {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #0369a1;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* ==========================================
+   4. ADD TASK FIELD & BUTTONS
+   ========================================== */
+.add-task {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.add-task input {
+  flex: 1;
+  padding: 14px 16px;
+  border-radius: 14px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.add-task input:focus {
+  border-color: #0ea5e9;
+}
+
+.add-task button {
+  background: #0ea5e9;
+  color: #ffffff;
+  border: none;
+  padding: 0 20px;
+  border-radius: 14px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.add-task button:hover {
+  background: #0284c7;
+}
+
+/* ==========================================
+   5. NEWLY ADDED: DYNAMIC TASK ROW ITEMS STYLE
+   ========================================== */
+#taskList {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  padding: 12px 16px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.done-btn {
+  background-color: #0ea5e9;
+  color: white;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background-color 0.2s;
+}
+
+.done-btn:hover {
+  background-color: #0284c7;
+}
+
+/* ==========================================
+   6. USER INTERFACE LOG ELEMENTS LAYOUT
+   ========================================== */
+.leaderboard-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f5f9;
+  font-size: 0.9rem;
+  color: #334155;
+}
+
+.leaderboard-item:last-child {
+  border-bottom: none;
+}
+
+.user-highlight {
+  font-weight: bold;
+  color: #0ea5e9;
+}
+
+.log-item {
+  padding: 4px 0;
+  border-bottom: 1px dashed #f1f5f9;
+  color: #475569;
+}
+
+.system-warning {
+  color: #dc2626;
+  font-weight: bold;
+}
+.app-logo {
+  font-size: 2.5rem;
+  background: #f0f9ff;
+  width: 70px;
+  height: 70px;
+  border-radius: 20px; /* Makes a rounded app icon shape */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 15px auto;
+  box-shadow: 0 4px 12px rgba(14, 165, 233, 0.15);
+  border: 2px solid #e0f2fe;
+}
+
